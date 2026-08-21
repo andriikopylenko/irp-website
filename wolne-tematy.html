@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>8. Wolne Tematy / Open Topics</title>
+<style>
+    :root {
+      --blue: #cddfec;
+      --blue-light: #dbe8f2;
+      --green: #d8ebc4;
+      --border: #000;
+      --max: 1220px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-width: 980px;
+      margin: 0;
+      background: var(--blue);
+      color: #000;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .shell {
+      max-width: var(--max);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 44px 52px 70px;
+      background: var(--blue);
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: #000;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      background: var(--green);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+    .topics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 54px;
+    }
+    .topic-column {
+      min-height: 440px;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      background: var(--blue);
+    }
+    .topic-link,
+    .topic-placeholder {
+      display: block;
+      margin: 0 0 6px;
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .topic-link:hover { text-decoration: underline; }
+    .content {
+      max-width: 960px;
+    }
+    .content h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+    .content p {
+      margin: 0 0 20px;
+      font-size: 18px;
+      line-height: 1.35;
+      text-align: justify;
+    }
+    .empty-topic {
+      margin-top: 24px;
+      min-height: 100px;
+    }
+
+  
+    html { min-width: 980px; }
+  </style>
+</head>
+<body>
+<main class="shell">
+<a class="back-link" data-en="← Back to the home page" data-pl="← Powrót do strony głównej" href="index.html">← Powrót do strony głównej</a>
+<h1 data-en="8. Open Topics" data-pl="8. Wolne Tematy">8. Wolne Tematy</h1>
+<section aria-label="Spis tematów" class="topics-grid">
+<div class="topic-column">
+<a class="topic-link" data-en="8.000 Introduction" data-pl="8.000 Wprowadzenie" href="#wprowadzenie">8.000 Wprowadzenie</a>
+<span class="topic-placeholder">8.002</span>
+</div>
+<div class="topic-column">
+<a class="topic-link" data-en="8.001 Heritage and Responsibility" data-pl="8.001 Dziedzictwo i Odpowiedzialność" href="#dziedzictwo">8.001 Dziedzictwo i Odpowiedzialność</a>
+<span class="topic-placeholder">8.003</span>
+</div>
+</section>
+<section class="content" id="wprowadzenie">
+<h2 data-en="8.000 Introduction" data-pl="8.000 Wprowadzenie">8.000 Wprowadzenie</h2>
+<p data-en="This space awaits your ideas and creativity, both in the choice of topics and in their further development. I believe that knowledge shared in this way will be interesting to a broader part of society and will carry both an educational and cognitive message." data-pl="To pole czeka na Państwa pomysłowość i kreatywność zarówno w aspekcie samych tematów jak i ich dalszego rozwijania. Wierzę, że w ten sposób przekazywana wiedza będzie interesująca dla większej części społeczeństwa i będzie niosła ze sobą przesłanie edukacyjne jak i poznawcze.">To pole czeka na Państwa pomysłowość i kreatywność zarówno w aspekcie samych tematów jak i ich dalszego rozwijania. Wierzę, że w ten sposób przekazywana wiedza będzie interesująca dla większej części społeczeństwa i będzie niosła ze sobą przesłanie edukacyjne jak i poznawcze.</p>
+</section>
+<section class="content empty-topic" id="dziedzictwo">
+<h2 data-en="8.001 Heritage and Responsibility" data-pl="8.001 Dziedzictwo i Odpowiedzialność">8.001 Dziedzictwo i Odpowiedzialność</h2>
+</section>
+</main>
+<script>
+(function() {
+  const requested = new URLSearchParams(window.location.search).get('lang');
+  const lang = requested === 'en' || requested === 'pl' ? requested : (localStorage.getItem('irp-lang') || 'pl');
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-pl][data-en]').forEach(function(el) { el.innerHTML = el.dataset[lang]; });
+  document.querySelectorAll('a[href]').forEach(function(link) {
+    const raw = link.getAttribute('href');
+    if (!raw || raw.startsWith('#') || raw.startsWith('http')) return;
+    const parts = raw.split('#');
+    const clean = parts[0].replace(/([?&])lang=(pl|en)(&|$)/, '').replace(/[?&]$/, '');
+    link.setAttribute('href', clean + (clean.includes('?') ? '&' : '?') + 'lang=' + lang + (parts[1] ? '#' + parts[1] : ''));
+  });
+  localStorage.setItem('irp-lang', lang);
+})();
+</script></body>
+</html>

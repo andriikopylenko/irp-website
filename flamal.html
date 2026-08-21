@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.04 FLAMAL S.A.</title>
+<style>
+:root{--blue:#cddfec;--green:#dcefc7;--border:#111;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blue);font-family:Verdana,Geneva,sans-serif;color:#111}
+.page{max-width:1100px;margin:0 auto;min-height:100vh;background:var(--blue);border-left:1px solid var(--border);border-right:1px solid var(--border)}
+.top{position:sticky;top:0;z-index:10;background:var(--blue);border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top h1{margin:0;font-size:24px;line-height:1.2}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+a,button{font:700 14px Verdana,Geneva,sans-serif;color:#111;text-decoration:none;border:1px solid var(--border);background:var(--green);padding:9px 12px;cursor:pointer}
+.lang{background:#e8f0f6}
+.gallery{padding:22px;display:grid;gap:24px;justify-items:center}
+.gallery img{display:block;max-width:100%;height:auto;background:white;border:1px solid #879baa;box-shadow:0 4px 14px rgba(0,0,0,.14)}
+@media(max-width:700px){.top{align-items:flex-start;flex-direction:column}.top h1{font-size:19px}.gallery{padding:12px}}
+
+    html { min-width: 980px; }
+  </style>
+</head>
+<body>
+<div class="page">
+<header class="top">
+<h1 data-pl="5.04 „FLAMAL” S.A. — Jak powstawał kapitalizm w Polsce tzw. Ludowej" data-en="5.04 “FLAMAL” S.A. — How Capitalism Emerged in the So-Called People’s Poland">5.04 „FLAMAL” S.A. — Jak powstawał kapitalizm w Polsce tzw. Ludowej</h1>
+<div class="actions">
+<a id="back" href="index.html#przedstawiciel" data-pl="Powrót do Przedstawiciela" data-en="Back to Representative">Powrót do Przedstawiciela</a>
+<button class="lang" type="button" data-set-lang="pl">PL</button>
+<button class="lang" type="button" data-set-lang="en">EN</button>
+</div>
+</header>
+<main class="gallery">
+<img src="assets/flamal/page-1.png" alt="5.04 FLAMAL S.A. — strona 1">
+<img src="assets/flamal/page-2.png" alt="5.04 FLAMAL S.A. — strona 2">
+<img src="assets/flamal/page-3.png" alt="5.04 FLAMAL S.A. — strona 3">
+<img src="assets/flamal/page-4.png" alt="5.04 FLAMAL S.A. — strona 4">
+<img src="assets/flamal/page-5.png" alt="5.04 FLAMAL S.A. — strona 5">
+<img src="assets/flamal/page-6.png" alt="5.04 FLAMAL S.A. — strona 6">
+<img src="assets/flamal/page-7.png" alt="5.04 FLAMAL S.A. — strona 7">
+<img src="assets/flamal/page-8.png" alt="5.04 FLAMAL S.A. — strona 8">
+<img src="assets/flamal/page-9.png" alt="5.04 FLAMAL S.A. — strona 9">
+<img src="assets/flamal/page-10.png" alt="5.04 FLAMAL S.A. — strona 10">
+<img src="assets/flamal/page-11.png" alt="5.04 FLAMAL S.A. — strona 11">
+<img src="assets/flamal/page-12.png" alt="5.04 FLAMAL S.A. — strona 12">
+</main>
+</div>
+<script>
+(function(){
+ const params=new URLSearchParams(location.search);
+ let lang=params.get('lang')||localStorage.getItem('irp-lang')||'pl';
+ if(!['pl','en'].includes(lang)) lang='pl';
+ function apply(l){
+   lang=l; localStorage.setItem('irp-lang',l); document.documentElement.lang=l;
+   document.querySelectorAll('[data-pl][data-en]').forEach(el=>{el.innerHTML=el.dataset[l];});
+   const b=document.getElementById('back'); b.href='index.html?lang='+l+'#przedstawiciel';
+   document.querySelectorAll('[data-set-lang]').forEach(btn=>btn.style.background=btn.dataset.setLang===l?'var(--green)':'#e8f0f6');
+   history.replaceState(null,'',location.pathname+'?lang='+l);
+ }
+ document.querySelectorAll('[data-set-lang]').forEach(btn=>btn.addEventListener('click',()=>apply(btn.dataset.setLang)));
+ apply(lang);
+})();
+</script>
+</body></html>
