@@ -8,7 +8,7 @@
 <style>
     :root {
       --blue: #cddfec;
-      --blue-light: #dbe8f2;
+      --blue-light: #cddfec;
       --green: #d8ebc4;
       --border: #000;
       --max: 1220px;
@@ -91,7 +91,25 @@
 
   
     html { min-width: 980px; }
-  </style>
+  
+
+/* Responsive compatibility for older/smaller laptop screens */
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <main class="shell">

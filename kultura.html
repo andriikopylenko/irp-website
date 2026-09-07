@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>4.19 Kultura — Inteligencja Rzeczypospolitej Polskiej</title>
 <style>
-:root { --blue:#cddfec; --blue-light:#dbe8f2; --green:#d8ebc4; --black:#000; --border:#111; --max:1450px; }
+:root { --blue:#cddfec; --blue-light:#cddfec; --green:#d8ebc4; --black:#000; --border:#111; --max:1450px; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
@@ -15,7 +16,7 @@ a { color:inherit; }
 .top { position:sticky; top:0; z-index:20; background:var(--blue); border-bottom:1px solid var(--border); padding:14px 22px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
 .top-title { text-align:center; flex:1; }
 .top-title h1 { margin:0; font-size:24px; line-height:1.1; text-transform:uppercase; }
-.top-title p { margin:5px 0 0; font-size:15px; font-weight:700; }
+.top-title p { margin:8px 0 0; font-size:24px; font-weight:700; }
 .btn { display:inline-block; border:1px solid var(--border); background:var(--green); padding:9px 12px; font-weight:900; text-decoration:none; white-space:nowrap; }
 .hero { padding:30px 30px 20px; text-align:center; border-bottom:18px solid var(--green); }
 .hero h2 { margin:0; font-size:30px; }
@@ -44,34 +45,51 @@ a { color:inherit; }
 }
 
     html { min-width: 980px; }
-  </style>
+  
+
+/* Responsive compatibility for older/smaller laptop screens */
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <div class="shell">
 <header class="top">
-<a class="btn" href="index.html#misja" data-pl="← Powrót do Misji" data-en="← Back to Mission">← Powrót do Misji</a>
-<div class="top-title"><h1>Inteligencja Rzeczypospolitej Polskiej</h1><p data-pl="4. Misja" data-en="4. Mission">4. Misja</p></div>
-<a class="btn" href="Kultura.pdf" target="_blank" rel="noopener" data-pl="Otwórz PDF" data-en="Open PDF">Otwórz PDF</a>
+<a class="btn" data-en="← Back to Mission" data-pl="← Powrót do Misji" href="index.html#misja">← Powrót do Misji</a>
+<div class="top-title"><h1>Inteligencja Rzeczypospolitej Polskiej</h1><p data-en="4. Mission" data-pl="4. Misja">4. Misja</p></div>
+<a class="btn" data-en="Open PDF" data-pl="Otwórz PDF" href="Kultura.pdf" rel="noopener" target="_blank">Otwórz PDF</a>
 </header>
 <section class="hero">
 <h2>4.19 KULTURA</h2>
-<p data-pl="Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu." data-en="The complete material has been organized by section. Select an item from the table of contents to go directly to the chosen text.">Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu.</p>
-<div class="language-notice" data-pl="" data-en="The full Kultura source text is currently available only in Polish. The page interface follows your selected language; an English translation of the articles must be prepared separately."></div>
+<p data-en="The complete material has been organized by section. Select an item from the table of contents to go directly to the chosen text." data-pl="Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu.">Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu.</p>
 </section>
 <section class="toc-wrap" id="spis">
-<h2 data-pl="Spis treści" data-en="Table of contents">Spis treści</h2>
-<nav class="toc"><a href="#sec-00" data-pl="4.19.00  Wprowadzenie" data-en="4.19.00 Introduction">4.19.00  Wprowadzenie</a>
-<a href="#sec-01" data-pl="4.19.01  Kultura współżycia ze zwierzętami" data-en="4.19.01 Culture of coexistence with animals">4.19.01  Kultura współżycia ze zwierzętami</a>
-<a href="#sec-02" data-pl="4.19.02  Kultura Szanowania Piękna" data-en="4.19.02 Culture of Respect for Beauty">4.19.02  Kultura Szanowania Piękna</a></nav>
+<h2 data-en="Table of contents" data-pl="Spis treści">Spis treści</h2>
+<nav class="toc"><a data-en="4.19.00 Introduction" data-pl="4.19.00  Wprowadzenie" href="#sec-00">4.19.00  Wprowadzenie</a>
+<a data-en="4.19.01 Culture of coexistence with animals" data-pl="4.19.01  Kultura współżycia ze zwierzętami" href="#sec-01">4.19.01  Kultura współżycia ze zwierzętami</a>
+<a data-en="4.19.02 Culture of Respect for Beauty" data-pl="4.19.02  Kultura Szanowania Piękna" href="#sec-02">4.19.02  Kultura Szanowania Piękna</a></nav>
 </section>
 <main class="content">
 <section class="text-section" id="sec-00">
-<h2 data-pl="4.19.00  Wprowadzenie" data-en="4.19.00 Introduction">4.19.00  Wprowadzenie</h2>
+<h2 data-en="4.19.00 Introduction" data-pl="4.19.00  Wprowadzenie">4.19.00  Wprowadzenie</h2>
 <p>Poniżej to tylko krótki wstęp do niezwykle bogatego pojęciowo tematu : KULTURA. Z pewnością wiele osób z Państwa ma swoje własne przeżycia i swoje własne obserwacje związane z zaproponowanym tematem i chciałoby się tymi przeżyciami i tymi obserwacjami z nami podzielić.</p>
-<a class="back-to-toc" href="#spis" data-pl="↑ Powrót do spisu treści" data-en="↑ Back to table of contents">↑ Powrót do spisu treści</a>
+<a class="back-to-toc" data-en="↑ Back to table of contents" data-pl="↑ Powrót do spisu treści" href="#spis">↑ Powrót do spisu treści</a>
 </section>
 <section class="text-section" id="sec-01">
-<h2 data-pl="4.19.01  Kultura współżycia ze zwierzętami" data-en="4.19.01 Culture of coexistence with animals">4.19.01  Kultura współżycia ze zwierzętami</h2>
+<h2 data-en="4.19.01 Culture of coexistence with animals" data-pl="4.19.01  Kultura współżycia ze zwierzętami">4.19.01  Kultura współżycia ze zwierzętami</h2>
 <p>Czy kochasz zwierzęta ?</p>
 <p>- Kocham.</p>
 <p>Taką odpowiedź dałaby większość z pytanych. A czy byłeś(aś) kiedyś w ZOO ?</p>
@@ -85,10 +103,10 @@ a { color:inherit; }
 <p>- Nie wiem.</p>
 <p>A więc ZOO dla ludzi, którzy kochają zwierzęta, to rozległy teren, pod którym wybudowano gęstą sieć podziemnych tuneli. Do tych tuneli można zejść licznymi schodami rozproszonymi po całym terenie. Innymi schodami, też rozproszonymi po całym terenie, można wyjść na powierzchnię. W tym przypadku zwiedzający wychodząc na powierzchnię wchodzi do dużej klatki i poprzez tą klatkę obserwuje zwierzęta żyjące na wolności.</p>
 <p>Czy kochasz zwierzęta ? …………………………………………………………… .</p>
-<a class="back-to-toc" href="#spis" data-pl="↑ Powrót do spisu treści" data-en="↑ Back to table of contents">↑ Powrót do spisu treści</a>
+<a class="back-to-toc" data-en="↑ Back to table of contents" data-pl="↑ Powrót do spisu treści" href="#spis">↑ Powrót do spisu treści</a>
 </section>
 <section class="text-section" id="sec-02">
-<h2 data-pl="4.19.02  Kultura Szanowania Piękna" data-en="4.19.02 Culture of Respect for Beauty">4.19.02  Kultura Szanowania Piękna</h2>
+<h2 data-en="4.19.02 Culture of Respect for Beauty" data-pl="4.19.02  Kultura Szanowania Piękna">4.19.02  Kultura Szanowania Piękna</h2>
 <p>Rozmowa dwóch Artystów o Pięknie byłaby zapewne jednostronna i nie byłaby pewnie zbyt ciekawa. Podobnie rozmowa dwóch inżynierów o Pięknie z tego samego powodu też nie byłaby zapewne zbyt ciekawa. Będąc jednak studentem na kierunku inżynierskim zagaiłem rozmowę o Pięknie z Artystą w następujący sposób : „ Piękna nie ma !”. Artysta w pierwszej chwili nic nie powiedział, ale jego mina wyrażała święte oburzenie, a następnie potępienie ignoranta, który był jego rozmówcą. Jak to nie ma powiedział – a Piękne obrazy, a Piękne krajobrazy, a Piękna muzyka, itd. Ale ja mówię, że Piękna nie ma jako takiego. Co to znaczy jako takiego ? To znaczy, że obiektywnie rzecz biorąc Piękna nie ma. Przyroda przecież sama z siebie nie tworzy Pięknych Krajobrazów np. tylko po to, żeby nas zachwycić. Przyroda po prostu tworzy w danym miejscy takie krajobrazy, jakie w danym miejscu mają być, co wynika z praw fizyki, i nic więcej, żadnych podtekstów. To my, i tylko my, nadajemy wrażeniu, jakie wywarł na nas dany krajobraz, wymiar Piękna. A zatem Piękno jest w nas. Jeśli odwrócimy głowę od podziwianego krajobrazu, to jego Piękno zanika, a krajobraz dalej pozostaje taki sam. A zatem to nie przedmioty, które podziwiamy są Piękne, to tylko te wrażenia, których doznajemy patrząc na te podziwiane przedmioty, są źródłem uczucia odczuwania Piękna.</p>
 <p>Przecież Człowiek nie widzi nawet kolorów tego świata, bo w naszym świecie nie ma kolorów. Wszechświat wypełniony jest natomiast falami elektromagnetycznymi, które same w sobie nie są kolorowe oczywiście. Do naszych oczu np. docierają fale elektromagnetyczne o różnych częstotliwościach, które dla nas są niewidzialne. W gałkach ocznych są one przetwarzane na ciąg impulsów elektrycznych, które dopiero w naszym mózgu są przetwarzanie na zespół reakcji fizyko-chemicznych, dzięki którym  powstają w naszym mózgu wrażenia kolorów przyporządkowanych do danej częstotliwości tych fal elektromagnetycznych. Tak więc podziwiając kolorowe obrazy Piękne dla nas są te, które wywarły na nas największe wrażenie. Ludzki mózg ma zdolność przy tym do zapamiętywania doznanych wrażeń.</p>
 <p>Tak więc byłem bezduszny wobec swojego rozmówcy – Artysty. Ale jeszcze tego samego roku Przestrzeń objawiła mnie swoje Piękno jako takie w zupełnie innej postaci. Zawsze w kwietniu każdego roku przenosiłem swoje życie z Warszawy na działkę przy lesie i nad wodami pięknej rzeczki. To z tej działki codziennie dojeżdżałem na wykłady do Warszawy. Aby dotrzeć na Uczelnię musiałam najpierw w ciągu godziny asfaltową drogą dojść do najbliższej stacji kolejowej, stąd pociągiem godzinę jechać do Warszawy, a Warszawie potrzebowałem jeszcze godzinę, by w końcu dotrzeć na Uczelnię na czas. Pewnego dnia, idąc na stację kolejową, gdzieś w połowie drogi, na środku asfaltowej drogi dostrzegłem rosnący kwiat. Znałem ten rodzaj kwiatów ze swoich wędrówek po lesie. To był bardzo delikatny kwiat : „dzwonek leśny”. Te kwiaty były tak delikatne, że rosły tylko w czystych lasach. Każdy kwiat miał swoją pojedynczą mocno zieloną cienką łodygę, a właściwie łodyżkę, zwieńczoną pojedynczym fioletowym kwiatem. Dzwonki leśne były pod ochroną i nie wolno było ich zrywać.</p>
@@ -96,9 +114,9 @@ a { color:inherit; }
 <p>Myśli się kłębią. Szkoda, że Piękne Chwile trwają, jak szczęście, tak krótko. Ale zaraz przyszło pocieszenie, ale zobacz Panie przyszły inżynierze, jaka jest siła życia na Planecie Ziemia. Na tej Planecie życie się odnawia, odnawia się i w warstwie materialnej i w warstwie duchowej, i tak po wsze czasy.</p>
 <p>Ten mały i delikatny kwiatek, jakim jest dzwonek leśny, nauczył mnie Piękna, nauczył mnie czuć i rozmieć Piękno, widzieć, rozumieć i przeżywać Piękno Przyrody. Wizerunek tego kwiatka mam przed oczami do dziś. W między tak zwanym czasie wyczytałem, że rośliny, nawet te delikatne, są w stanie wytworzyć w swych komórkach ciśnienie wody/soków aż do 40-tu atmosfer włącznie. Nawet dla urządzeń technicznych jest to ciśnienie duże. A zatem ta drobna roślinka wytwarzała w swych komórkach zmienne/pulsujące ciśnienie w okolicach ciśnienia 40-tu atmosfer odrywając od dołu z asfaltu ziarenko piasku po ziarenku dzień i noc, aż łodyżka wydostała się na zewnątrz.</p>
 <p>Dla mnie piękna była w tym delikatnym kwiatku siła życia, która pozwoliła mu, choć tylko parę godzin, doznać jasności i ciepła słońca.</p>
-<a class="back-to-toc" href="#spis" data-pl="↑ Powrót do spisu treści" data-en="↑ Back to table of contents">↑ Powrót do spisu treści</a>
+<a class="back-to-toc" data-en="↑ Back to table of contents" data-pl="↑ Powrót do spisu treści" href="#spis">↑ Powrót do spisu treści</a>
 </section>
-<div class="source" data-pl="Źródło materiału: „4. MISJA. 19. Kultura”." data-en="Source material: “4. MISSION. 19. Culture.”">Źródło materiału: „4. MISJA. 19. Kultura”.</div>
+<div class="source" data-en="Source material: “4. MISSION. 19. Culture.”" data-pl="Źródło materiału: „4. MISJA. 19. Kultura”.">Źródło materiału: „4. MISJA. 19. Kultura”.</div>
 </main>
 </div>
 <script>

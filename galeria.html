@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>5.11 Galeria</title>
+<style>
+:root{--blue:#cddfec;--green:#d8ebc4;--border:#111;--light:#cddfec}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blue);font-family:Verdana,Geneva,sans-serif;color:#111}
+.page{max-width:1180px;margin:0 auto;min-height:100vh;background:var(--blue);border-left:1px solid var(--border);border-right:1px solid var(--border)}
+.top{position:sticky;top:0;z-index:10;background:var(--blue);border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+a,button{font:700 14px Verdana,Geneva,sans-serif;color:#111;text-decoration:none;border:1px solid var(--border);background:var(--green);padding:9px 12px;cursor:pointer}
+.lang{background:var(--light)}
+.content{padding:32px 28px 48px}
+.document h1{font-size:32px;margin:0 0 18px;text-align:center}
+.document p{font-size:16px;line-height:1.45;margin:0 0 18px;text-align:center}
+.pdf-wrap{border:1px solid var(--border);background:var(--blue);padding:10px}
+.pdf-wrap object{width:100%;height:900px;border:0;background:#fff}
+@media(max-width:760px){.top{justify-content:flex-start}.content{padding:22px 14px 36px}.document h1{font-size:26px}.document p{font-size:15px}.pdf-wrap object{height:70vh}}
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="top">
+<a data-en="← Back to Representative" data-pl="← Powrót do Przedstawiciela" href="index.html#przedstawiciel" id="back">← Powrót do Przedstawiciela</a>
+<a data-en="Open original PDF" data-pl="Otwórz oryginalny PDF" href="5.11-Galeria.pdf" target="_blank">Otwórz oryginalny PDF</a>
+<button class="lang" data-set-lang="pl" type="button">PL</button>
+<button class="lang" data-set-lang="en" type="button">EN</button>
+</header>
+<main class="content">
+<article class="document">
+<h1 data-en="5.11 Gallery" data-pl="5.11 Galeria">5.11 Galeria</h1>
+<p data-en="The gallery has been added as an embedded PDF file." data-pl="Galeria została dodana w formie osadzonego pliku PDF.">Galeria została dodana w formie osadzonego pliku PDF.</p>
+<div class="pdf-wrap">
+<object data="5.11-Galeria.pdf" type="application/pdf">
+<p data-en="The PDF could not be displayed. Use the button above to open it." data-pl="Nie udało się wyświetlić pliku PDF. Kliknij przycisk u góry, aby go otworzyć.">Nie udało się wyświetlić pliku PDF. Kliknij przycisk u góry, aby go otworzyć.</p>
+</object>
+</div>
+</article>
+</main>
+</div>
+<script>
+(function(){
+  const STORAGE_KEY='irp-lang';
+  const buttons=[...document.querySelectorAll('[data-set-lang]')];
+  function setLang(lang){
+    document.documentElement.lang=lang;
+    localStorage.setItem(STORAGE_KEY,lang);
+    document.querySelectorAll('[data-pl]').forEach(el=>{ el.textContent=el.getAttribute(lang==='en'&&el.hasAttribute('data-en')?'data-en':'data-pl'); });
+    buttons.forEach(btn=>{ btn.style.background = btn.dataset.setLang===lang ? 'var(--green)' : 'var(--light)'; });
+  }
+  buttons.forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.setLang)));
+  setLang(localStorage.getItem(STORAGE_KEY)||'pl');
+})();
+</script>
+</body>
+</html>

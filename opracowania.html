@@ -1,4 +1,5 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5.09 Wykonane Opracowania</title><style>
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>5.09 Wykonane Opracowania</title><style>
 :root{--blue:#cddfec;--green:#dcefc7;--border:#111;--panel:rgba(255,255,255,.14)}
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;background:var(--blue);font-family:Verdana,Geneva,sans-serif;color:#111}
@@ -12,7 +13,25 @@ a,button{font:700 14px Verdana,Geneva,sans-serif;color:#111;text-decoration:none
 @media(max-width:700px){.top{position:static;align-items:flex-start;flex-direction:column}.top h1{font-size:20px}.content{padding:18px 14px 34px}.doc-h1{font-size:21px}.doc-h2{font-size:17px}.doc-p,.numbered,.bullet{font-size:15px}}
 
     html { min-width: 980px; }
-  </style></head><body><div class="page"><header class="top"><h1 data-pl="5.09 Wykonane Opracowania" data-en="5.09 Completed Studies and Analyses">5.09 Wykonane Opracowania</h1><div class="actions"><a id="back" href="index.html#przedstawiciel" data-pl="← Powrót do Przedstawiciela" data-en="← Back to Representative">← Powrót do Przedstawiciela</a><button class="lang" type="button" data-set-lang="pl">PL</button><button class="lang" type="button" data-set-lang="en">EN</button></div></header><main class="content"><div class="section-note" data-pl="Treść została przeniesiona z oryginalnego dokumentu na błękitne tło strony." data-en="The content has been transferred from the original document onto the website’s blue background.">Treść została przeniesiona z oryginalnego dokumentu na błękitne tło strony.</div><h3 class="doc-h2"><strong>6.09 Wykonane opracowania</strong></h3>
+  
+
+/* Responsive compatibility for older/smaller laptop screens */
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+
+</style></head><body><div class="page"><header class="top"><h1 data-en="5.09 Completed Studies and Analyses" data-pl="5.09 Wykonane Opracowania">5.09 Wykonane Opracowania</h1><div class="actions"><a data-en="← Back to Representative" data-pl="← Powrót do Przedstawiciela" href="index.html#przedstawiciel" id="back">← Powrót do Przedstawiciela</a><button class="lang" data-set-lang="pl" type="button">PL</button><button class="lang" data-set-lang="en" type="button">EN</button></div></header><main class="content"><h3 class="doc-h2"><strong>6.09 Wykonane opracowania</strong></h3>
 <h3 class="doc-h2"><strong>Wykaz wykonanych opracowań i ważniejszych prac</strong></h3>
 <p class="doc-p">Uruchomienie w 1985 r. i wdrożenie do stosowania w Polsce grupy pierwszych  polskich preparatów mikrobiologicznych typu TRIGER w tym:</p>
 <p class="doc-p">Triger 1 - służące do utylizacji i oczyszczania szamb i dołów zrzutowych,</p>

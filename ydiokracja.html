@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>4.20 Ydiokracja — Inteligencja Rzeczypospolitej Polskiej</title>
 <style>
-:root { --blue:#c7dbe8; --blue-light:#d7e4ed; --green:#d9edbd; --black:#000; --border:#111; --max:1450px; }
+:root { --blue:#c7dbe8; --blue-light:#c7dbe8; --green:#d9edbd; --black:#000; --border:#111; --max:1450px; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
@@ -16,7 +16,7 @@ a { color:inherit; }
 .top { position:sticky; top:0; z-index:20; background:var(--blue); border-bottom:1px solid var(--border); padding:14px 22px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
 .top-title { text-align:center; flex:1; }
 .top-title h1 { margin:0; font-size:24px; line-height:1.1; text-transform:uppercase; }
-.top-title p { margin:5px 0 0; font-size:15px; font-weight:700; }
+.top-title p { margin:8px 0 0; font-size:24px; font-weight:700; }
 .btn { display:inline-block; border:1px solid var(--border); background:var(--green); padding:9px 12px; font-weight:900; text-decoration:none; white-space:nowrap; }
 .hero { padding:30px 30px 20px; text-align:center; border-bottom:18px solid var(--green); }
 .hero h2 { margin:0; font-size:30px; }
@@ -46,7 +46,25 @@ a { color:inherit; }
 .language-notice{max-width:850px;margin:14px auto 0;padding:9px 12px;border:1px solid var(--border);font-size:13px;line-height:1.35;background:var(--blue-light);}
 .language-notice:empty{display:none;}
     html { min-width: 980px; }
-  </style>
+  
+
+/* Responsive compatibility for older/smaller laptop screens */
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <div class="shell">
@@ -57,8 +75,8 @@ a { color:inherit; }
 </header>
 <section class="hero">
 <h2>4.20 YDOKRACJA</h2>
-<p data-en="The complete material has been organized by section. Select an item from the table of contents to go directly to the chosen text." data-pl="Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu.">Pełny materiał został uporządkowany według rozdziałów. Wybierz pozycję ze spisu treści, aby przejść bezpośrednio do danego tekstu.</p>
-<div class="language-notice" data-en="The full Ydiokracja source text is currently available only in Polish. The page interface follows your selected language; an English translation of the articles must be prepared separately." data-pl=""></div></section>
+
+</section>
 <section class="toc-wrap" id="spis">
 <h2 data-en="Table of contents" data-pl="Spis treści">Spis treści</h2>
 <nav class="toc"><a href="#sec-000"><span>4.20.000</span> Wprowadzenie</a>

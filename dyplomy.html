@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>5.02 Dyplomy</title>
 <style>
-:root{--blue:#cddfec;--green:#d8ebc4;--border:#111;--light:#e8f0f6;}
+:root{--blue:#cddfec;--green:#d8ebc4;--border:#111;--light:#cddfec;}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--blue);font-family:Verdana,Geneva,sans-serif;color:#111}
@@ -36,32 +37,49 @@ a,button.ctrl{font:700 14px Verdana,Geneva,sans-serif;color:#111;text-decoration
 @media(max-width:700px){.top{align-items:flex-start;flex-direction:column}.top h1{font-size:20px}.section{padding:12px 12px 0}.gallery{padding:12px;grid-template-columns:1fr}}
 
     html { min-width: 980px; }
-  </style>
+  
+
+/* Responsive compatibility for older/smaller laptop screens */
+html, body { min-width: 0 !important; }
+body { overflow-x: hidden; }
+.shell, .page { width: min(1450px, 100%) !important; min-width: 0 !important; max-width: 1450px; margin-left: auto; margin-right: auto; }
+img { max-width: 100%; height: auto; }
+@media (max-width: 1300px) {
+  .shell, .page { width: 100% !important; }
+  body { font-size: 16px; line-height: 1.35; }
+  main, .content, .section, .toc-wrap { max-width: 100%; }
+}
+@media (max-width: 1080px) {
+  .top { flex-wrap: wrap; gap: 8px; }
+  .top h1, .top-title h1 { font-size: 21px !important; }
+  .toc { grid-template-columns: 1fr !important; }
+}
+
+</style>
 </head>
 <body>
 <div class="page">
 <header class="top">
-<h1 data-pl="5.02 Dyplomy" data-en="5.02 Diplomas">5.02 Dyplomy</h1>
+<h1 data-en="5.02 Diplomas" data-pl="5.02 Dyplomy">5.02 Dyplomy</h1>
 <div class="actions">
-<a id="back" href="index.html#przedstawiciel" data-pl="Powrót do Przedstawiciela" data-en="Back to Representative">Powrót do Przedstawiciela</a>
-<button class="ctrl lang" type="button" data-set-lang="pl">PL</button>
-<button class="ctrl lang" type="button" data-set-lang="en">EN</button>
+<a data-en="Back to Representative" data-pl="Powrót do Przedstawiciela" href="index.html#przedstawiciel" id="back">Powrót do Przedstawiciela</a>
+<button class="ctrl lang" data-set-lang="pl" type="button">PL</button>
+<button class="ctrl lang" data-set-lang="en" type="button">EN</button>
 </div>
 </header>
 <section class="section"><div class="box">
-<h2 data-pl="Galeria dyplomów" data-en="Diploma gallery">Galeria dyplomów</h2>
-<p data-pl="Poniżej przedstawiono dyplomy jako osobne obrazy na błękitnym tle strony." data-en="Below, the diplomas are presented as separate images on the blue page background.">Poniżej przedstawiono dyplomy jako osobne obrazy na błękitnym tle strony.</p>
-<p class="note" data-pl="Kliknij obraz, aby go powiększyć." data-en="Click an image to enlarge it.">Kliknij obraz, aby go powiększyć.</p>
+<h2 data-en="Diploma gallery" data-pl="Galeria dyplomów">Galeria dyplomów</h2>
+<p data-en="Below, the diplomas are presented as separate images on the blue page background." data-pl="Poniżej przedstawiono dyplomy jako osobne obrazy na błękitnym tle strony.">Poniżej przedstawiono dyplomy jako osobne obrazy na błękitnym tle strony.</p>
+<p class="note" data-en="Click an image to enlarge it." data-pl="Kliknij obraz, aby go powiększyć.">Kliknij obraz, aby go powiększyć.</p>
 </div></section>
-<main class="gallery"><article class="media-card"><div class="media-title" data-pl="Dyplom 1" data-en="Diploma 1">Dyplom 1</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-1.jpg" data-caption="5.02 Dyplomy — pozycja 1"><img src="assets/dyplomy/docx-gallery/dyplom-1.jpg" alt="5.02 Dyplomy — pozycja 1"></button></article>
-<article class="media-card"><div class="media-title" data-pl="Dyplom 2" data-en="Diploma 2">Dyplom 2</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-2.jpg" data-caption="5.02 Dyplomy — pozycja 2"><img src="assets/dyplomy/docx-gallery/dyplom-2.jpg" alt="5.02 Dyplomy — pozycja 2"></button></article>
-<article class="media-card"><div class="media-title" data-pl="Dyplom 3" data-en="Diploma 3">Dyplom 3</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-3.jpg" data-caption="5.02 Dyplomy — pozycja 3"><img src="assets/dyplomy/docx-gallery/dyplom-3.jpg" alt="5.02 Dyplomy — pozycja 3"></button></article>
-<article class="media-card"><div class="media-title" data-pl="Dyplom 4" data-en="Diploma 4">Dyplom 4</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-4.jpg" data-caption="5.02 Dyplomy — pozycja 4"><img src="assets/dyplomy/docx-gallery/dyplom-4.jpg" alt="5.02 Dyplomy — pozycja 4"></button></article>
-<article class="media-card"><div class="media-title" data-pl="Dyplom 5" data-en="Diploma 5">Dyplom 5</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-5.jpg" data-caption="5.02 Dyplomy — pozycja 5"><img src="assets/dyplomy/docx-gallery/dyplom-5.jpg" alt="5.02 Dyplomy — pozycja 5"></button></article>
-<article class="media-card"><div class="media-title" data-pl="Dyplom 6" data-en="Diploma 6">Dyplom 6</div><button class="doc-thumb" type="button" data-full="assets/dyplomy/docx-gallery/dyplom-6.jpg" data-caption="5.02 Dyplomy — pozycja 6"><img src="assets/dyplomy/docx-gallery/dyplom-6.jpg" alt="5.02 Dyplomy — pozycja 6"></button></article></main>
+<main class="gallery"><article class="media-card"><div class="media-title" data-en="Diploma 1" data-pl="Dyplom 1">Dyplom 1</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 1" data-full="dyplom-1.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 1" src="dyplom-1.jpg"/></button></article>
+<article class="media-card"><div class="media-title" data-en="Diploma 2" data-pl="Dyplom 2">Dyplom 2</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 2" data-full="dyplom-2.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 2" src="dyplom-2.jpg"/></button></article>
+<article class="media-card"><div class="media-title" data-en="Diploma 3" data-pl="Dyplom 3">Dyplom 3</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 3" data-full="dyplom-3.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 3" src="dyplom-3.jpg"/></button></article>
+<article class="media-card"><div class="media-title" data-en="Diploma 4" data-pl="Dyplom 4">Dyplom 4</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 4" data-full="dyplom-4.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 4" src="dyplom-4.jpg"/></button></article>
+<article class="media-card"><div class="media-title" data-en="Diploma 5" data-pl="Dyplom 5">Dyplom 5</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 5" data-full="dyplom-5.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 5" src="dyplom-5.jpg"/></button></article>
+<article class="media-card"><div class="media-title" data-en="Diploma 6" data-pl="Dyplom 6">Dyplom 6</div><button class="doc-thumb" data-caption="5.02 Dyplomy — pozycja 6" data-full="dyplom-6.jpg" type="button"><img alt="5.02 Dyplomy — pozycja 6" src="dyplom-6.jpg"/></button></article></main>
 </div>
-<div class="overlay" id="overlay" hidden><div class="overlay-box"><button id="close-overlay" class="close-btn" type="button" aria-label="Close">×</button><img id="overlay-img" src="" alt=""><div class="caption" id="overlay-cap"></div></div></div>
-
+<div class="overlay" hidden="" id="overlay"><div class="overlay-box"><button aria-label="Close" class="close-btn" id="close-overlay" type="button">×</button><img alt="" id="overlay-img" src=""/><div class="caption" id="overlay-cap"></div></div></div>
 <script>
 (function(){
  const params=new URLSearchParams(location.search);
@@ -92,5 +110,4 @@ a,button.ctrl{font:700 14px Verdana,Geneva,sans-serif;color:#111;text-decoration
  }
 })();
 </script>
-
 </body></html>
